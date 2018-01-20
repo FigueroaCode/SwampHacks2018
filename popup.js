@@ -23,7 +23,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   chrome.storage.sync.get('signedIn', function(items){
-    if(items != null || items != undefined){
+    if(items != null && items != undefined){
       if(items.signedIn){
         //if signed in go to report card
         window.location.href = "pages/reportCard/reportCard.html";
