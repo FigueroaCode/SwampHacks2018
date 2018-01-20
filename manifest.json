@@ -10,10 +10,14 @@
     "default_icon": "resources/icon.png",
     "default_popup": "popup.html"
   },
-
+  "content_scripts": [
+    {
+      "js": ["lib/jquery-1.7.2.min.js"],
+    }
+  ],
   "permissions":
   [
     "activeTab",
-    "storage"
+    "storage",
   ]
 }
