@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+  // $('body').css({'background-color':'red'});
   chrome.storage.sync.get('signedIn', function(items){
     if(items != null || items != undefined){
       if(items.signedIn){
