@@ -21,16 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
   leftArrowBtn.addEventListener('click', function(){
     if( checkUpVal.innerHTML != "Daily" ){
       //Change to the next greatest value.
-      this.checkUpIndex++;
-      checkUpVal.innerHTML = this.possibleCheckUpValues[this.checkUpIndex];
+      checkUpIndex--;
+      checkUpVal.innerHTML = possibleCheckUpValues[checkUpIndex];
     }
   });
 
   rightArrowBtn.addEventListener('click', function(){
     if( checkUpVal.innerHTML != "Monthly" ){
       //Change to the next lowest value.
-      this.checkUpIndex--;
-      checkUpVal.innerHTML = this.possibleCheckUpValues[this.checkUpIndex];
+      checkUpIndex++;
+      checkUpVal.innerHTML = possibleCheckUpValues[checkUpIndex];
     }
   });
 
