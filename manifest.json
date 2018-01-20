@@ -4,13 +4,9 @@
   "name": "Balance",
   "description": "Improve your mental health, by assessing and improving your life balance.",
   "version": "1.0",
-  "background": {
-    "persistent":true,
-    "page":"background.html"
-},
 "content_scripts": [{
       "matches": ["*://*/*"],
-      "js": ["jquery.min.js"],
+      "js": ["jquery.min.js","background.js"],
       "run_at": "document_end"
   }],
   "browser_action":

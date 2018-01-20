@@ -5,5 +5,3 @@
 //         });
 //     }
 // });
-$('body').css({'background-color':'red'});
-console.log('running');

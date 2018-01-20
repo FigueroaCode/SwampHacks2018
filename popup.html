@@ -1,26 +1,29 @@
 <!doctype html>
 <html>
   <head>
-    <script src="jquery.min.js"></script>
     <link rel="stylesheet" href="popup.css"></link>
+    <script src="jquery.min.js"></script>
     <script src="popup.js"></script>
+
+    <div class="title">
+    <h1> Welcome to Balance </h1>
+    </div>
   </head>
 
   <body id="body">
-    <h1> Welcome to Balance </h1>
 
-    <h2> My goal is to help improve your life balance, and help you create and keep track of goals. </h2>
-    <h2> With that being said, how often should I check up on your progress? </h2>
-    <div id="slider">
-      <button id="leftArrowBtn"><img src="/resources/left-arrow.png"></img></button>
+    <p> My goal is to help improve your life balance, and help you create and keep track of goals. </p>
+    <p> With that being said, how often should I check up on your progress? </p>
+    <div id="slider" class="inRow">
+      <button class="button" id="leftArrowBtn"><img src="/resources/left-arrow.png" width="30px" height="30px"></img></button>
       <h3 id="checkUpVal">Daily</h3>
-      <button id="rightArrowBtn"><img src="/resources/right-arrow.png"></img></button>
+      <button class="button" id="rightArrowBtn"><img src="/resources/right-arrow.png" width="30px" height="30px"></img></button>
     </div>
 
-    <h2> What name do you go by? </h2>
+    <h3 class="clearBoth"> What name do you go by? </h3>
     <input type="text" id="nameInput"></input>
 
-    <button id="nextBtn">Next</button>
+    <button class="button" id="nextBtn">Next</button>
 
   </body>
 </html>

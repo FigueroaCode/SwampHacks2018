@@ -3,27 +3,35 @@
   <script src="reportCard.js"></script>
 </head>
 <body id="body">
-  <h1>Activities</h1>
-  <ul id="activity-list">
-    <li>
-      <img src="../../resources/rank3.png" />
-      <button id="mentalHealthBtn">Mental Health</button>
-    </li>
-    <li>
-      <img src="../../resources/rank3.png" />
-      <button id="nutritionBtn">Nutrition</button>
-    </li>
-    <li>
-      <img src="../../resources/rank3.png" />
-      <button id="fitnessBtn">Fitness</button>
-    </li>
-    <li>
-      <img src="../../resources/rank3.png" />
-      <button id="financesBtn">Finances</button>
-    </li>
-    <li>
-      <img src="../../resources/rank3.png" />
-      <button id="socialCircleBtn">Social Circle</button>
-    </li>
-  </ul>
+  <grid>
+  <h1 id="title">Here's your summary</h1>
+  <h2>Click on an area of interest to track goals.</h2>
+
+  <row>
+    <col>
+      <img class="icons" id="mentalHealthImg" src="../../resources/rank3.png" />'
+    </col>
+    <col>
+      <button class="buttons" id="mentalHealthBtn">Mental Health</button>
+    </col>
+  </row>
+  <row>
+    <img class="icons" id="nutritionImg" src="../../resources/rank3.png" />
+    <button class="buttons" id="nutritionBtn">Nutrition</button>
+  </row>
+  <row>
+    <img class="icons" id="fitnessImg" src="../../resources/rank3.png" />
+    <button class="buttons" id="fitnessBtn">Fitness</button>
+  </row>
+  <row>
+    <img class="icons" id="financesImg" src="../../resources/rank3.png" />
+    <button class="buttons" id="financesBtn">Finances</button>
+  </row>
+  <row>
+    <img class="icons" id="socialCircleImg" src="../../resources/rank3.png" />
+    <button class="buttons" id="socialCircleBtn">Social Circle</button>
+  </row>
+
+  </grid>
+
 </body>
