@@ -104,23 +104,34 @@ function saveBackgroundColor(url, color) {
 // chrome.storage.local allows the extension data to be synced across multiple
 // user devices.
 document.addEventListener('DOMContentLoaded', () => {
-  getCurrentTabUrl((url) => {
-    var dropdown = document.getElementById('dropdown');
+  var nextBtn = document.getElementById("nextBtn");
 
-    // Load the saved background color for this page and modify the dropdown
-    // value, if needed.
-    getSavedBackgroundColor(url, (savedColor) => {
-      if (savedColor) {
-        changeBackgroundColor(savedColor);
-        dropdown.value = savedColor;
-      }
-    });
-
-    // Ensure the background color is changed and saved when the dropdown
-    // selection changes.
-    dropdown.addEventListener('change', () => {
-      changeBackgroundColor(dropdown.value);
-      saveBackgroundColor(url, dropdown.value);
-    });
+  nextBtn.addEventListener('click', function(){
+    window.location.href = "pages/nutrition/nutrition.html";
   });
+  // startHereBtn.addEventListener('click', function(){
+  //   //open up the main page
+  //   chrome.tabs.create({'url': chrome.extension.getURL('main.html')}, function(tab) {
+  //     // Tab opened.
+  //   });
+  // });
+  // getCurrentTabUrl((url) => {
+  //   var dropdown = document.getElementById('dropdown');
+  //
+  //   // Load the saved background color for this page and modify the dropdown
+  //   // value, if needed.
+  //   getSavedBackgroundColor(url, (savedColor) => {
+  //     if (savedColor) {
+  //       changeBackgroundColor(savedColor);
+  //       dropdown.value = savedColor;
+  //     }
+  //   });
+  //
+  //   // Ensure the background color is changed and saved when the dropdown
+  //   // selection changes.
+  //   dropdown.addEventListener('change', () => {
+  //     changeBackgroundColor(dropdown.value);
+  //     saveBackgroundColor(url, dropdown.value);
+  //   });
+  // });
 });
