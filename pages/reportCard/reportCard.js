@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   chrome.storage.sync.get(fetchData, function(items){
     if( items != null && items != undefined ){
+      console.log(items.financesStatus);
       //Update the images in the user's report card to match their current state.
       switch(items.mentalHealthStatus){
         case "0":
