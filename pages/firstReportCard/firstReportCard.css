@@ -1,0 +1,14 @@
+#body {
+  width: 15rem;
+}
+
+.faceButtons {
+  height: 2rem;
+  width: 2rem;
+}
+
+.faceIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0;
+}
