@@ -1,5 +1,5 @@
 #body {
-  background-color: #f6d397;
+  background-color: #FFF4D9;
   width: 15rem;
 }
 
@@ -8,11 +8,12 @@
   margin-left: -10px;
   margin-top: -15px;
   padding: 10px;
-  background-color:#72caaf;
+  background-color: #DB500B;
   text-align: center;
+  color: white;
 }
 .button {
-    background-color: #85cbf8;
+    background-color: #000005;
     border: none;
     color: white;
     padding: 8px 20px;
@@ -47,17 +48,57 @@ p{
  #leftArrowBtn{
    float: left;
    padding: 5px 10px;
-   background-color:#f6d397;
+   background-color:#FFF4D9;
  }
 
  #rightArrowBtn{
    margin-top: -43px;
    float: right;
    padding: 5px 10px;
-   background-color:#f6d397;
+   background-color:#FFF4D9;
  }
 
  #nameInput{
    margin-top: -20px;
    width: 70%;
  }
+
+ #sliderValue{
+
+ }
+
+
+ /* Slider */
+ .slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+ .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #DB500B;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #000005;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #000005;
+    cursor: pointer;
+}
