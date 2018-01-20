@@ -1,3 +1,25 @@
+  function updateSliderUnits(checkUpVal,slider,sliderValue){
+    var sliderUnits = document.getElementById('sliderUnit');
+
+    if(checkUpVal.innerHTML == "Daily"){
+      sliderUnit.innerHTML = "Hour(s)";
+      slider.min = 0;
+      slider.max = 24;
+    }else if(checkUpVal.innerHTML == "Weekly"){
+      sliderUnit.innerHTML = "Day(s)";
+      slider.min = 0;
+      slider.max = 7;
+    }else{
+      //Monhtly
+      sliderUnit.innerHTML = "Week(s)";
+      slider.min = 0;
+      slider.max = 4;
+    }
+    var val = Number.parseInt(slider.max / 2);
+    slider.value = val;
+    sliderValue.innerHTML = val;
+  };
+
 document.addEventListener('DOMContentLoaded', () => {
 
   chrome.storage.sync.get('signedIn', function(items){
@@ -18,11 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
   var possibleCheckUpValues = ["Daily","Weekly","Monthly"];
   var checkUpIndex = 0;
 
+  var slider = document.getElementById('myRange');
+  var sliderValue = document.getElementById('sliderValue');
+  var sliderUnits = document.getElementById('sliderUnit');
+  //Set the default Value
+  sliderValue.innerHTML = slider.value;
+
   nextBtn.addEventListener('click', function(){
     if( nameInput.value != null && nameInput.value != "" ){
         // Save the user's name to the local database.
-        var data = {'signedIn': true,'name': nameInput.value, 'checkUp': checkUpVal.innerHTML};
-
+        var data = {'signedIn': true,'name': nameInput.value,
+        'timePeriod': sliderValue.innerHTML + " " + sliderUnits.innerHTML,'checkUp': checkUpVal.innerHTML};
         chrome.storage.sync.set(data);
         window.location.href = "pages/firstReportCard/firstReportCard.html";
     }
@@ -33,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //Change to the next greatest value.
       checkUpIndex--;
       checkUpVal.innerHTML = possibleCheckUpValues[checkUpIndex];
+      updateSliderUnits(checkUpVal,slider,sliderValue);
     }
   });
 
@@ -41,7 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
       //Change to the next lowest value.
       checkUpIndex++;
       checkUpVal.innerHTML = possibleCheckUpValues[checkUpIndex];
+      updateSliderUnits(checkUpVal,slider,sliderValue);
     }
   });
+
+  slider.oninput = function(){
+    sliderValue.innerHTML = this.value;
+  }
 
 });

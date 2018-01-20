@@ -135,4 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
   socialCircleBtn.addEventListener('click', function(){
     window.location.href = "../socialCircle/socialCircle.html";
   });
+
+  var settingsBtn = document.getElementById('settingsBtn');
+
+  settingsBtn.addEventListener('click', function(){
+    chrome.storage.sync.set({'signedIn': false});
+    window.location.href = "../../popup.html";
+  });
 });
