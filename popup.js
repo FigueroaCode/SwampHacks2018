@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', function(){
     if( nameInput.value != null && nameInput.value != "" ){
         // Save the user's name to the local database.
-        var data = {'signedIn': true,'name': nameInput.value,
+        var data = {'name': nameInput.value,
         'timePeriod': sliderValue.innerHTML + " " + sliderUnits.innerHTML,'checkUp': checkUpVal.innerHTML};
         chrome.storage.sync.set(data);
         window.location.href = "pages/firstReportCard/firstReportCard.html";

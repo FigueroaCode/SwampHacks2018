@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', function(){
 
     if( mentalHealthStatus != "" && nutritionStatus != "" && fitnessStatus != "" && financesStatus != "" && socialCircleStatus != "" ){
+      
       window.location.href = "../reportCard/reportCard.html";
     }else{
       //TODO: Add snackbar telling user that they need to select one status for
