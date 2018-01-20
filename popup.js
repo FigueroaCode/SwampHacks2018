@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', function(){
     if( nameInput.value != null && nameInput.value != "" ){
         //TODO: Save the user's name to the local database.
+        StorageArea.set()
         window.location.href = "pages/reportCard/reportCard.html";
     }
   });
