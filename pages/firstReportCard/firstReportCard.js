@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
   var financesStatus = "";
   var socialCircleStatus = "";
 
+  var welcomeTitle = document.getElementById('welcomeTitle');
+  //get username
+  chrome.storage.sync.get('name', function(items){
+    if(items != null && items != undefined){
+      welcomeTitle.innerHTML = items.name;
+    }
+  });
+
   //Next/Home Page Button
   var nextBtn = document.getElementById("nextBtn");
 

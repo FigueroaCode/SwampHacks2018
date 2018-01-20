@@ -1,20 +1,50 @@
 #body {
+  background-color: #FFF4D9;
   width: 15rem;
 }
 
+.title {
+  width: 100%;
+  margin-left: -10px;
+  margin-top: -15px;
+  padding: 10px;
+  background-color: #DB500B;
+  color: white;
+}
+.button {
+    background-color: #DB500B;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 4px;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 20px;
+}
+.clearBoth{
+  padding-top: -20px;
+  clear:both;
+}
+p{
+  text-align: center;
+  font-size: 15px;
+}
+#titleText{
+  font-size: 17px;
+  display:inline-block;
+}
 #activity-list{
   list-style-type: none;
 }
-
-#title {
-  font-size: 1.4rem;
-  width: 100%;
+#settingsBtn{
+  width: 20%;
+  margin-left: 2%;
+  background-color: #DB500B;
 }
- .buttons {
-   width: 100%;
-   text-align: center;
- }
-
  .icons {
    float: left;
  }
