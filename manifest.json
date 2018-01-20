@@ -4,13 +4,15 @@
   "name": "Balance",
   "description": "Improve your mental health, by assessing and improving your life balance.",
   "version": "1.0",
-
+  "background": {
+    "persistent":true,
+    "page":"background.html"
+},
   "browser_action":
   {
     "default_icon": "resources/icon.png",
     "default_popup": "popup.html"
   },
-
   "permissions":
   [
     "activeTab",
