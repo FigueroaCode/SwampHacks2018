@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   var mentalHealthBtn = document.getElementById('mentalHealthBtn');
+  var mentalHealthStatus = "";
+  var nutritionStatus = "";
+  var fitnessStatus = "";
+  var financesStatus = "";
+
 
   mentalHealthBtn.addEventListener('click', function(){
     window.location.href = "../mentalHealth/mentalHealth.html";

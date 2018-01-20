@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', function(){
 
     if( mentalHealthStatus != "" && nutritionStatus != "" && fitnessStatus != "" && financesStatus != "" && socialCircleStatus != "" ){
+      var data = {'mentalHealthStatus': mentalHealthStatus, 'nutritionStatus': nutritionStatus,
+        'fitnessStatus': fitnessStatus, 'financesStatus': financesStatus, 'socialCircleStatus': socialCircleStatus
+      }
+      chrome.storage.sync.set(data);
       window.location.href = "../reportCard/reportCard.html";
     }else{
       //TODO: Add snackbar telling user that they need to select one status for

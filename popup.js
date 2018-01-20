@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // $('body').css({'background-color':'red'});
+  $('body').css({'background-color':'red'});
   chrome.storage.sync.get('signedIn', function(items){
     if(items != null || items != undefined){
       if(items.signedIn){
@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', function(){
     if( nameInput.value != null && nameInput.value != "" ){
         // Save the user's name to the local database.
-        var data = {'signedIn': true,'name': nameInput.value, 'student': studentCheckBox.checked,
-         'checkUp': checkUpVal.innerHTML};
+        var data = {'signedIn': true,'name': nameInput.value, 'checkUp': checkUpVal.innerHTML};
         chrome.storage.sync.set(data);
         window.location.href = "pages/firstReportCard/firstReportCard.html";
     }
