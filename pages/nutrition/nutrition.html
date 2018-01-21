@@ -1,8 +1,40 @@
 <head>
   <link rel="stylesheet" href="nutrition.css"></link>
   <script src="nutrition.js"></script>
-
-  <button id="backBtn">Back</button>
-  <h1>Nutrition</h1>
+  <div class="title">
+    <button id="backBtn" class="button">Back</button>
+    <h2 id="nutritionTitle">Nutrition</h2>
+  </div>
 </head>
-<body id="body"></body>
+<body id="body">
+  <h2> Short Term Goal </h2>
+  <div align="center">
+    <input class="inputGoal" id="shortTermGoalID" type="text" placeholder="Enter a Short Term Goal"></input>
+    <button id="shortTermComplete" class="button">Complete</button>
+    <button id="shortTermCompleteLater" class="button">Postpone</button>
+  </div>
+
+  <h2> Long Term Goal </h2>
+  <div align="center">
+    <input class="inputGoal" id="longTermGoalID" type="text" placeholder="Enter a Long Term Goal"></input>
+    <button id="longTermComplete" class="button">Complete</button>
+    <button id="longTermCompleteLater" class="button">Postpone</button>
+  </div>
+
+  <div id="completedGoals">
+    <h2> Completed Goals </h2>
+    <ul id="completedGoalsList">
+
+    </ul>
+    <button id="clearCompletedGoals">Clear</button>
+  </div>
+
+  <div id="uncompletedGoals">
+    <h2> Postponed Goals </h2>
+    <ul id="uncompletedGoalsList">
+
+    </ul>
+    <button id="clearUncompletedGoals">Clear</button>
+  </div>
+
+</body>

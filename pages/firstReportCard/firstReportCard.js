@@ -1,5 +1,33 @@
+function getTimeInMinutes(time){
+  //format of time: #_unit(s)
+  var spaceIndex = time.indexOf(' ');
+  var number = Number.parseInt(time.substr(0,spaceIndex).trim());
+  var unit = time.substr(spaceIndex + 1,time.length-5).trim();
+  //Hour,Day,Week
+  if(unit == "Hour"){
+    //60 minutes in an Hour
+    return number * 60;
+  }else if(unit == "Day"){
+    //1440 minutes in a day
+    return number * 1440;
+  }else if(unit == "Week"){
+    //10080 minutes in a Week
+    return number * 10080;
+  }else{
+    console.log('something went wrong.');
+  }
+}
+
+function setupAlarm(){
+  chrome.storage.sync.get('timePeriod', function(items){
+    var period = getTimeInMinutes(items.timePeriod);
+    chrome.alarms.create('goalAlarm', {delayInMinutes: 1, periodInMinutes: period});
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
+  setupAlarm();
   var mentalHealthStatus = "";
   var nutritionStatus = "";
   var fitnessStatus = "";
@@ -57,9 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if( mentalHealthStatus != "" && nutritionStatus != "" && fitnessStatus != "" && financesStatus != "" && socialCircleStatus != "" ){
       var data = {'signedIn': true,'mentalHealthStatus': mentalHealthStatus, 'nutritionStatus': nutritionStatus,
-        'fitnessStatus': fitnessStatus, 'financesStatus': financesStatus, 'socialCircleStatus': socialCircleStatus
-      }
+        'fitnessStatus': fitnessStatus, 'financesStatus': financesStatus,
+         'socialCircleStatus': socialCircleStatus}
       chrome.storage.sync.set(data);
+      setupAlarm();
       window.location.href = "../reportCard/reportCard.html";
     }else{
       //TODO: Add snackbar telling user that they need to select one status for
