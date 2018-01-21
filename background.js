@@ -10,10 +10,11 @@
 //   $('#test').css({'position': 'absolute', 'margin-top': '50%', 'margin-bottom': '50%', 'font-size': '500px', 'z-index': '-1'});
 // });
 function getRandomGoals(){
+  var ran = Math.floor(Math.random() * 4);//5 topics in total
+  if()
   chrome.storage.sync.get('', function(items){
     if(items != null && items != undefined){
       console.log('goal items', items);
-      //var ran = Math.floor(Math.random() * items.length);
 
     }
   });
