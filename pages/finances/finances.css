@@ -3,6 +3,13 @@
   width: 15rem;
 }
 
+#completedGoals, #uncompletedGoals {
+  display: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 10rem;
+}
+
 .title {
   width: 100%;
   margin-left: -10px;
@@ -11,6 +18,7 @@
   background-color: #DB500B;
   color: white;
 }
+
 .button {
     background-color: #000005;
     border: none;
@@ -23,13 +31,16 @@
     border-radius: 4px;
     margin-top: 2%;
 }
+
 .inputGoal{
   width: 100%;
 }
+
 #backBtn{
   display:inline-block;
   padding: 6px;
 }
+
 #financeTitle{
   margin-top: 2%;
   display: inline-block;
