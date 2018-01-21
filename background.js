@@ -1,21 +1,25 @@
-// chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
-//     if(changeInfo && changeInfo.status == "complete"){
-//         chrome.tabs.executeScript(tabId, {file: "jquery.js"}, function(){
-//             chrome.tabs.executeScript(tabId, {file: "script.js"});
-//         });
-//     }
-// });
-// document.addEventListener('DOMContentLoaded', function(){
-//   $('body').append('<h1 id="test">Testing</h1>');
-//   $('#test').css({'position': 'absolute', 'margin-top': '50%', 'margin-bottom': '50%', 'font-size': '500px', 'z-index': '-1'});
-// });
 function getRandomGoals(){
-  var ran = Math.floor(Math.random() * 4);//5 topics in total
-  if()
-  chrome.storage.sync.get('', function(items){
+  var ran = Math.floor(Math.random() * 5);//5 topics in total
+  //Choose a random topic
+  //ran == 0 then financeGoals
+  var topic = "financeGoals";
+  if(ran == 1){
+    //Mental Health
+    topic = "mentalHealthGoals";
+  }else if(ran == 2){
+    //Nutrition
+    topic = "nutritionGoals";
+  }else if(ran == 3){
+    //Fitness
+    topic = "fitnessGoals";
+  }else if(ran == 4){
+    //Social Circle
+    topic = "socialCircleGoals";
+  }
+  chrome.storage.sync.get(topic, function(items){
     if(items != null && items != undefined){
       console.log('goal items', items);
-
+      return items;
     }
   });
 }
@@ -29,5 +33,5 @@ chrome.alarms.onAlarm.addListener(function(alarm){
       message: 'Don\'t forget you were trying to achieve this.',
       items: goals
     };
-    //chrome.notifications.create('goalNotification', opt);
+    chrome.notifications.create('goalNotification', opt);
 });

@@ -21,14 +21,17 @@
     display: inline-block;
     font-size: 10px;
     border-radius: 4px;
+    margin-top: 2%;
 }
-
+.inputGoal{
+  width: 100%;
+}
 #backBtn{
   display:inline-block;
   padding: 6px;
 }
 #financeTitle{
-  margin-top: 0;
+  margin-top: 2%;
   display: inline-block;
   float: right;
 }
