@@ -3,19 +3,19 @@ function getRandomGoals(){
   //Choose a random topic
   //ran == 0 then financeGoals
   var topic = "financeGoals";
-  // if(ran == 1){
-  //   //Mental Health
-  //   topic = "mentalHealthGoals";
-  // }else if(ran == 2){
-  //   //Nutrition
-  //   topic = "nutritionGoals";
-  // }else if(ran == 3){
-  //   //Fitness
-  //   topic = "fitnessGoals";
-  // }else if(ran == 4){
-  //   //Social Circle
-  //   topic = "socialCircleGoals";
-  // }
+  if(ran == 1){
+    //Mental Health
+    topic = "mentalHealthGoals";
+  }else if(ran == 2){
+    //Nutrition
+    topic = "nutritionGoals";
+  }else if(ran == 3){
+    //Fitness
+    topic = "fitnessGoals";
+  }else if(ran == 4){
+    //Social Circle
+    topic = "socialCircleGoals";
+  }
 
   return topic;
 }
@@ -23,7 +23,6 @@ function getRandomGoals(){
 chrome.alarms.onAlarm.addListener(function(alarm){
     var topic = getRandomGoals();
     chrome.storage.sync.get(topic, function(items){
-      console.log(items[topic].shortTermGoal);
       if(items != null && items != undefined && items[topic].shortTermGoal != undefined && items[topic].longTermGoal != undefined){
         //display the users goals
         var opt = {
@@ -37,6 +36,3 @@ chrome.alarms.onAlarm.addListener(function(alarm){
       }
     });
 });
-
-
-console.log('running')
