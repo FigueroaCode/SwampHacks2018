@@ -27,7 +27,6 @@ function setupAlarm(){
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  setupAlarm();
   var mentalHealthStatus = "";
   var nutritionStatus = "";
   var fitnessStatus = "";
