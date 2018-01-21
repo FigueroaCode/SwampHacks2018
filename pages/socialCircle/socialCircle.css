@@ -1,3 +1,12 @@
+a {
+  text-decoration: none;
+  color: #DB500B;
+}
+
+a:focus, a:hover {
+  border-bottom: 1px solid #DB500B;
+}
+
 #body {
   background-color: #FFF4D9;
   width: 15rem;
